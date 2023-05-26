@@ -1,2 +1,2 @@
 # Projeto-BarberShop
- Porjeto de softwere de uma barbearia.
+ Projeto de softwere de uma barbearia.
