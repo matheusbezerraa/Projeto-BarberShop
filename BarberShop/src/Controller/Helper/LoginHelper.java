@@ -21,12 +21,12 @@ public class LoginHelper {
     }
     
     public Usuario obterModelo(){
-        String nome = view.getTextUsuario().getText();
-        String senha = view.getTextSenha().getText();
-        
-        Usuario modelo = new Usuario(0,"nome","00188997229","senha");
-        return modelo;
-    }
+    String nome = view.getTextUsuario().getText();
+    String senha = new String(view.getTextSenha().getPassword()); // Observe que estamos usando getPassword() em vez de getText() para obter a senha como uma matriz de caracteres
+    
+    Usuario modelo = new Usuario(0, nome, "", senha); // Observe que estamos passando as variáveis nome e senha para criar o objeto Usuario
+    return modelo;
+}
     
     public void setarModelo(Usuario modelo){
         String nome = modelo.getNome();

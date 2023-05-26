@@ -6,8 +6,10 @@
 package Controller;
 
 import Controller.Helper.LoginHelper;
+import Model.DAO.UsuarioDAO;
 import Model.Usuario;
 import View.Login;
+import View.MenuPrincipal;
 
 /**
  *
@@ -27,9 +29,21 @@ public class LoginController {
     public void entrarNoSistema(){
         //pegar o usuario da view
         Usuario usuario = helper.obterModelo();
+        
         //Pesquisar Usuario no Banco
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuario);
+        
         //se o usuario da view tiver o msm usuario e senah do banco vou redirecionar para o menu
-        //Senão mostar uma mensagem ao usuario "usuario ou senha invalidos"
+        if(usuarioAutenticado != null){
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.setVisible(true);
+            this.view.dispose();
+            //Senão mostar uma mensagem ao usuario "usuario ou senha invalidos"
+        }else{
+            view.exibeMensagem("Usuario ou senha Invalidos");       
+        }
+        
     }
     
     

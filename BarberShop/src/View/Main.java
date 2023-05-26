@@ -25,7 +25,7 @@ public class Main {
          System.out.println(servico.getDescricao());
          System.out.println(servico.getValor());
          
-         Cliente cliente = new Cliente("Rua doutor Machado 434", "5204020",1,"Matheus","00188997229");
+         Cliente cliente = new Cliente(1,"Rua doutor Machado 434", "5204020","Matheus","00188997229");
           System.out.println(cliente.getNome());
           
          Usuario usuario = new Usuario(1, "barbeiro", "00188997229", "1234"); 
