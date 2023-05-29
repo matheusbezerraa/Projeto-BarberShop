@@ -36,6 +36,16 @@ public class Agendamento {
         }
     }
 
+    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String observacao) {
+        
+        this(id,cliente,servico,valor,data);
+        this.observacao = observacao;
+        
+        
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -70,6 +80,18 @@ public class Agendamento {
 
     public Date getData() {
         return data;
+    }
+    
+    public String getDataFormatada(){
+        
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    
+    }
+    
+    public String getHoraFormatada(){
+        
+        return new SimpleDateFormat("HH:mm").format(data);
+        
     }
 
     public void setData(Date data) {
